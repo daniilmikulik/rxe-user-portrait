@@ -10,8 +10,9 @@ export class SurveyManager {
     private state: number = 0;
     private maxState: number = 8;
     private answers: Array<Answer> = [];
+    public id: string = '';
 
-    constructor() {};
+    constructor(id) { this.id = id };
 
     showNextQuestion(): { state: number; question: Question | undefined }  {
         if (this.isSurveyEnded()) {

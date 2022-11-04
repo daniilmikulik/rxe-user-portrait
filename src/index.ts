@@ -1,11 +1,11 @@
 import { Telegraf } from 'telegraf';
 import { Keyboard } from 'telegram-keyboard';
-import { useMessage, useQuestionButtons } from "./utils";
+import {useMessage, useQuestionButtons, useSurveyManager} from "./utils";
 import { SurveyManager } from "./SurveyManager";
 
 const bot = new Telegraf(process.env.BOT_TOKEN || '');
 
-const surveyManager = new SurveyManager();
+const surveyManagers = [];
 
 bot.command('start', async (ctx) => {
     try {
@@ -17,7 +17,8 @@ bot.command('start', async (ctx) => {
 
 bot.command('survey', async (ctx) => {
     try {
-        surveyManager.reset();
+        const surveyManager = useSurveyManager(surveyManagers, ctx.chat.id);
+
         const { question, state } = surveyManager.showNextQuestion();
 
         if (typeof question === "undefined") {
@@ -34,6 +35,8 @@ bot.command('survey', async (ctx) => {
 
 bot.on('callback_query', async (ctx) => {
     try {
+        const surveyManager = useSurveyManager(surveyManagers, ctx?.chat?.id);
+
         surveyManager.storeAnswer(ctx.update.callback_query.data || '');
 
         const { question, state } = surveyManager.showNextQuestion();
@@ -54,6 +57,7 @@ bot.on('callback_query', async (ctx) => {
 
 bot.command('quit', async (ctx) => {
     try{
+        const surveyManager = useSurveyManager(surveyManagers, ctx.chat.id);
         surveyManager.reset();
         await ctx.reply(useMessage('quitMessage'));
     } catch (err) {
