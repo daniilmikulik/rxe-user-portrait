@@ -1,0 +1,10 @@
+[
+  {
+    "text": "Начать опрос",
+    "callback_data": "/survey"
+  },
+  {
+    "text": "Перезапустить опрос",
+    "callback_data": "/reset"
+  }
+]

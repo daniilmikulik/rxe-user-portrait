@@ -1,0 +1,119 @@
+[
+  {
+    "title": "1. Укажите ваш пол:",
+    "buttons": [
+      {
+        "text": "Мужской",
+        "callback_data": "male"
+      },
+      {
+        "text": "Женский",
+        "callback_data": "female"
+      }
+    ]
+  },
+  {
+    "title": "2. Укажите ваш возраст:",
+    "buttons": [
+      {
+        "text": "До 35",
+        "callback_data": "0-35"
+      },
+      {
+        "text": "Старше 35",
+        "callback_data": "36-100"
+      }
+    ]
+  },
+  {
+    "title": "3. Работаете ли вы:",
+    "buttons": [
+      {
+        "text": "Да",
+        "callback_data": "employed"
+      },
+      {
+        "text": "Нет",
+        "callback_data": "unemployed"
+      }
+    ]
+  },
+  {
+    "title": "4. Учитесь ли вы:",
+    "buttons": [
+      {
+        "text": "Да",
+        "callback_data": "student"
+      },
+      {
+        "text": "Нет",
+        "callback_data": "not a student"
+      }
+    ]
+  },
+  {
+    "title": "5. Уровень дохода:",
+    "buttons": [
+      {
+        "text": "До 50000₽",
+        "callback_data": "poor"
+      },
+      {
+        "text": "Более 50000₽",
+        "callback_data": "rich"
+      }
+    ]
+  },
+  {
+    "title": "6. Планируете ли покупку видеокарты в рассрочку или кредит:",
+    "buttons": [
+      {
+        "text": "Да",
+        "callback_data": "credit"
+      },
+      {
+        "text": "Нет",
+        "callback_data": "without credit"
+      }
+    ]
+  },
+  {
+    "title": "7. Играете ли вы регулярно в игры на ПК:",
+    "buttons": [
+      {
+        "text": "Да",
+        "callback_data": "gamer"
+      },
+      {
+        "text": "Нет",
+        "callback_data": "not a gamer"
+      }
+    ]
+  },
+  {
+    "title": "8. Связана ли ваша деятельность/хобби с обработкой или монтажом видео:",
+    "buttons": [
+      {
+        "text": "Да",
+        "callback_data": "video designer"
+      },
+      {
+        "text": "Нет",
+        "callback_data": "not a video designer"
+      }
+    ]
+  },
+  {
+    "title": "9. Занимаетесь ли вы майнингом криптовалют:",
+    "buttons": [
+      {
+        "text": "Да",
+        "callback_data": "miner"
+      },
+      {
+        "text": "Нет",
+        "callback_data": "not a miner"
+      }
+    ]
+  }
+]
